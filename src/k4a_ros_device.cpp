@@ -834,13 +834,13 @@ void K4AROSDevice::framePublisherThread()
         {
           // Update the timestamp offset based on the difference between the system timestamp (i.e., arrival at USB bus)
           // and device timestamp (i.e., hardware clock at exposure start).
-          updateTimestampOffset(capture.get_ir_image().get_device_timestamp(),
-                                capture.get_ir_image().get_system_timestamp());
+          //updateTimestampOffset(capture.get_ir_image().get_device_timestamp(),
+          //                      capture.get_ir_image().get_system_timestamp());
         }
         else if (params_.color_enabled)
         {
-          updateTimestampOffset(capture.get_color_image().get_device_timestamp(),
-                                capture.get_color_image().get_system_timestamp());
+          //updateTimestampOffset(capture.get_color_image().get_device_timestamp(),
+          //                      capture.get_color_image().get_system_timestamp());
         }
       }
     }
