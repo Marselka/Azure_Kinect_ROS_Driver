@@ -1340,12 +1340,12 @@ std::chrono::microseconds K4AROSDevice::getCaptureTimestamp(const k4a::capture& 
 ros::Time K4AROSDevice::timestampToROS(const std::chrono::microseconds& k4a_timestamp_us)
 {
   // This will give INCORRECT timestamps until the first image.
-  if (device_to_realtime_offset_.count() == 0)
-  {
-    initializeTimestampOffset(k4a_timestamp_us);
-  }
+  //if (device_to_realtime_offset_.count() == 0)
+  //{
+  //  initializeTimestampOffset(k4a_timestamp_us);
+  //}
 
-  std::chrono::nanoseconds timestamp_in_realtime = k4a_timestamp_us + device_to_realtime_offset_;
+  std::chrono::nanoseconds timestamp_in_realtime = k4a_timestamp_us;// + device_to_realtime_offset_;
   ros::Time ros_time;
   ros_time.fromNSec(timestamp_in_realtime.count());
   return ros_time;
